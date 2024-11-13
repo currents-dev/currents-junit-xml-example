@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Tests" tests="2" time="1.149">
+  <testsuite name="Currents API" id="10061b06-57a1-481c-b601-c1464f77e8c5" timestamp="2024-11-13T03:43:02.741Z" tests="4" failures="1" errors="0" time="0.957">
+    <testcase name="Response status code is 200" time="0.957" classname="CurrentsApi"/>
+    <testcase name="Response time is less than 200ms" time="0.957" classname="CurrentsApi">
+      <failure type="AssertionFailure" message="expected 957 to be below 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: e1e87782-7e0d-48dc-a937-3f6e1b931edc.]]>
+        <![CDATA[Collection name: Tests.]]>
+        <![CDATA[Request name: Currents API.]]>
+        <![CDATA[Test description: Response time is less than 200ms.]]>
+        <![CDATA[Error message: expected 957 to be below 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 957 to be below 200
+   at Object.eval sandbox-script.js:2:1).]]>
+      </failure>
+    </testcase>
+    <testcase name="Status code is 200" time="0.957" classname="CurrentsApi"/>
+    <testcase name="Validate the response schema for required fields and data types" time="0.957" classname="CurrentsApi"/>
+  </testsuite>
+  <testsuite name="Get Run" id="0f0cf8e5-0622-4f4d-8e6c-f21b2b2e2d47" timestamp="2024-11-13T03:43:02.741Z" tests="4" failures="0" errors="0" time="0.192">
+    <testcase name="Response status code is 200" time="0.192" classname="GetRun"/>
+    <testcase name="Response time is less than 200ms" time="0.192" classname="GetRun"/>
+    <testcase name="Status code is 200" time="0.192" classname="GetRun"/>
+    <testcase name="Validate the response schema for required fields and data types" time="0.192" classname="GetRun"/>
+  </testsuite>
+</testsuites>
