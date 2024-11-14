@@ -49,7 +49,6 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
         const startTime = new Date(suite.timestamp);
         const durationMillis = parseFloat(suite.time) * 1000;
         const endTime = new Date(startTime.getTime() + durationMillis);
-        console.log("RES::", result.testsuites.name);
 
         const suiteJson = {
           groupId: result.testsuites.name,
@@ -73,10 +72,9 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
               wallClockDuration: durationMillis,
             },
             tests: suite.testcase.map((test) => {
-              console.log("TEST::", test);
               return {
                 _t: Date.now(),
-                testId: generateTestId(test.name + suite.name),
+                testId: generateTestId(test.name, suite.name),
                 title: [test.name],
                 state: test.failure ? "failed" : "passed",
                 isFlaky: false,
@@ -99,7 +97,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
                     duration: parseFloat(test.time) * 1000,
                     status: test.failure ? "failed" : "passed",
                     stdout: [],
-                    stderr: test.failure ? [JSON.stringify(test.failure)] : [],
+                    stderr: test.failure ? [test.failure._] : [],
                     errors: test.failure ? [test.failure] : [],
                     error: test.failure ? test.failure : {},
                   },

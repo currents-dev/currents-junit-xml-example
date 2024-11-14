@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml"
+    "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml",
+    "reinstall": "rm -r node_modules && npm install"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@currents/cmd": "^1.1.2",
+    "@currents/cmd": "/Users/miguelangarano/Documents/GitHub/currents-reporter/packages/cmd",
     "newman": "^6.2.1",
     "xml2js": "^0.6.2"
   }

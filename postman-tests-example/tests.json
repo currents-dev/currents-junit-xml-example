@@ -45,12 +45,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer dXGDik1SmFlDfOCyDpmhS8dNzmMrG27P0noe7qbGNvnMQQmPwWcN51dFGu1SouRP",
+						"value": "Bearer your-api-key",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.currents.dev/v1/runs/previous?projectId=LrO7nE&ciBuildId=reporter-PipelineTest-1-1&pwLastRun=true",
+					"raw": "https://api.currents.dev/v1/runs/previous?projectId=your-project-id&ciBuildId=your-ci-build-id&pwLastRun=true",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -65,11 +65,11 @@
 					"query": [
 						{
 							"key": "projectId",
-							"value": "LrO7nE"
+							"value": "your-project-id"
 						},
 						{
 							"key": "ciBuildId",
-							"value": "reporter-PipelineTest-1-1"
+							"value": "your-ci-build-id"
 						},
 						{
 							"key": "pwLastRun",
@@ -119,12 +119,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer dXGDik1SmFlDfOCyDpmhS8dNzmMrG27P0noe7qbGNvnMQQmPwWcN51dFGu1SouRP",
+						"value": "Bearer your-api-key",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.currents.dev/v1/runs/f6fe40a7856d160d",
+					"raw": "https://api.currents.dev/v1/runs/your-run-id",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -134,7 +134,7 @@
 					"path": [
 						"v1",
 						"runs",
-						"f6fe40a7856d160d"
+						"your-run-id"
 					]
 				}
 			},
