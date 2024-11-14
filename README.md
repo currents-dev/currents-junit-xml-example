@@ -3,9 +3,9 @@
 This is an example repository that showcases using [Currents.dev](https://currents.dev) for sending test results via Currents Generic API.
 
 
-- Note: get your record key from [Currents.dev](https://app.currents.dev) and set [Jenkins credential](https://www.jenkins.io/doc/book/security/credentials/) variable `CURRENTS_RECORD_KEY`
+- Note: get your record key from [Currents.dev](https://app.currents.dev)
 
-- Note: set the `CURRENTS_PROJECT_ID` [Jenkins credential](https://www.jenkins.io/doc/book/security/credentials/) variable - obtain the project id from [Currents.dev](https://app.currents.dev)
+- Note: obtain the project id from [Currents.dev](https://app.currents.dev)
 
 ## Definitions:
 - Report directory: Is the folder path where currents/cmd will get/generate files and information for uploading your test results to Currents platform.
