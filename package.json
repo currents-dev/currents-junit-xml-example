@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml",
-    "generate-instance-files": "node scripts/junitXmlToInstanceJson.js"
+    "generate-instance-files": "node scripts/junitXmlToInstanceJson.js",
+    "report-results": "npx currents upload --key=your-record-key --project-id=your-project-id --ci-build-id postman-report-1 --report-dir postman-tests-example"
   },
   "author": "",
   "license": "ISC",
