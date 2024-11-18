@@ -60,7 +60,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
           startTime: suite.timestamp,
           results: {
             stats: {
-              suites: 1,
+              suites: testsuites.tests,
               tests: parseInt(suite.tests),
               passes: suite.testcase.filter((tc) => !tc.failure).length,
               pending: 0,
