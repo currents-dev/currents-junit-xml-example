@@ -84,7 +84,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
 
         const suiteJson = {
           groupId: result.testsuites.name,
-          spec: suite.name,
+          spec: suite.file ?? suite.name,
           worker: {
             workerIndex: 1,
             parallelIndex: 1,
@@ -94,46 +94,57 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
             stats: {
               suites: testcases.length,
               tests: parseInt(suite.tests),
-              passes: testcases.filter((tc) => !tc.failure).length,
+              passes: testcases.filter((tc) => !tc?.failure).length,
               pending: 0,
               skipped: 0,
-              failures: testcases.filter((tc) => tc.failure).length,
+              failures: testcases.filter((tc) => tc?.failure).length,
               flaky: 0,
               wallClockStartedAt: suite.timestamp,
               wallClockEndedAt: endTime.toISOString(),
               wallClockDuration: durationMillis,
             },
             tests: testcases.map((test) => {
+              console.log("FAIL::", test.failure);
+              const hasFailure = test?.failure && test?.failure !== "false";
+              console.log("FAILURERES::", extractFailure(test?.failure));
               return {
                 _t: Date.now(),
-                testId: generateTestId(test.name, suite.name),
-                title: [test.name],
-                state: test.failure ? "failed" : "passed",
+                testId: generateTestId(test?.name, suite.name),
+                title: [test?.name],
+                state: hasFailure ? "failed" : "passed",
                 isFlaky: false,
-                expectedStatus: test.failure ? "failed" : "passed",
+                expectedStatus: hasFailure ? "failed" : "passed",
                 timeout: 0,
                 location: {
                   column: 1,
-                  file: "postman-tests-example/tests.xml",
+                  file: suite.file ?? suite.name,
                   line: 1,
                 },
                 retries: 1,
                 attempts: [
                   {
-                    _s: test.failure ? "failed" : "passed",
+                    _s: hasFailure ? "failed" : "passed",
                     attempt: 1,
                     workerIndex: 1,
                     parallelIndex: 1,
                     startTime: suite.timestamp,
                     steps: [],
-                    duration: parseFloat(test.time) * 1000,
-                    status: test.failure ? "failed" : "passed",
+                    duration: parseFloat(test?.time) * 1000,
+                    status: hasFailure ? "failed" : "passed",
                     stdout: test?.["system-out"] ? [test?.["system-out"]] : [],
-                    stderr: test.failure
-                      ? [test.failure.message ?? test.failure._]
+                    stderr: hasFailure ? extractFailure(test?.failure) : [],
+                    errors: hasFailure
+                      ? [
+                          mergeFailuresIntoMessage(
+                            extractFailure(test?.failure)
+                          ) ?? {},
+                        ]
                       : [],
-                    errors: test.failure ? [test.failure] : [],
-                    error: test.failure ? test.failure : {},
+                    error: hasFailure
+                      ? mergeFailuresIntoMessage(
+                          extractFailure(test?.failure)
+                        ) ?? {}
+                      : {},
                   },
                 ],
               };
@@ -155,3 +166,38 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
     }
   );
 });
+
+function extractFailure(failure) {
+  const failureArray = [];
+  if (failure?.message) {
+    failureArray.push(failure?.message);
+  }
+  if (failure?._) {
+    failureArray.push(failure?._);
+  }
+  if (Array.isArray(failure)) {
+    console.log("ENTER::");
+    let failureItem;
+    for (let i = 0; i < failure.length; i++) {
+      if (typeof failure[i] === "object" && failure[i] !== null) {
+        failureItem = failure[i];
+        break;
+      }
+    }
+    console.log("FAIL ITEM::", failureItem);
+    return extractFailure(failureItem);
+  }
+  return failureArray;
+}
+
+function mergeFailuresIntoMessage(failuresArray) {
+  if (!failuresArray) {
+    return;
+  }
+  if (failuresArray.length === 0) {
+    return;
+  }
+  return {
+    message: failuresArray.join(", "),
+  };
+}

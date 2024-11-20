@@ -4,3 +4,4 @@ node_modules
 upload.marker.json
 .currents
 .env
+cypress/
