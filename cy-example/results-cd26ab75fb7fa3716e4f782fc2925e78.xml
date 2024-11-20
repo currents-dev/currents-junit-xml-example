@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="4.234" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2024-11-20T16:54:20" tests="0" file="cy-example/e2e/first.cy.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="First Test Suite" timestamp="2024-11-20T16:54:20" tests="2" failures="1" time="4.234">
+    <testcase name="First Test Suite visits google" time="0" classname="visits google" failure="true" error="true" success="false">
+      <failure message="Timed out retrying after 4000ms: expected &apos;Google&apos; to include &apos;Amazon&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: expected 'Google' to include 'Amazon'
+    at Context.eval (webpack:///./e2e/first.cy.js:4:15)]]></failure>
+    </testcase>
+    <testcase name="First Test Suite can search" time="4.234" classname="can search" failure="false" error="false" success="true">
+    </testcase>
+  </testsuite>
+</testsuites>

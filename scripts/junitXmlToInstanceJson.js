@@ -84,7 +84,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
 
         const suiteJson = {
           groupId: result.testsuites.name,
-          spec: suite.file ?? suite.name,
+          spec: suite.name,
           worker: {
             workerIndex: 1,
             parallelIndex: 1,
@@ -104,9 +104,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
               wallClockDuration: durationMillis,
             },
             tests: testcases.map((test) => {
-              console.log("FAIL::", test.failure);
               const hasFailure = test?.failure && test?.failure !== "false";
-              console.log("FAILURERES::", extractFailure(test?.failure));
               return {
                 _t: Date.now(),
                 testId: generateTestId(test?.name, suite.name),
@@ -131,20 +129,24 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
                     steps: [],
                     duration: secondsToMilliseconds(parseFloat(test?.time)),
                     status: hasFailure ? "failed" : "passed",
-                    stdout: test?.["system-out"] ? [test?.["system-out"]] : [],
-                    stderr: hasFailure ? extractFailure(test?.failure) : [],
+                    stdout: test?.["system-out"]
+                      ? [test?.["system-out"]]
+                      : undefined,
+                    stderr: hasFailure
+                      ? extractFailure(test?.failure)
+                      : undefined,
                     errors: hasFailure
                       ? [
                           mergeFailuresIntoMessage(
                             extractFailure(test?.failure)
                           ) ?? {},
                         ]
-                      : [],
+                      : undefined,
                     error: hasFailure
                       ? mergeFailuresIntoMessage(
                           extractFailure(test?.failure)
                         ) ?? {}
-                      : {},
+                      : undefined,
                   },
                 ],
               };
@@ -176,7 +178,6 @@ function extractFailure(failure) {
     failureArray.push(failure?._);
   }
   if (Array.isArray(failure)) {
-    console.log("ENTER::");
     let failureItem;
     for (let i = 0; i < failure.length; i++) {
       if (typeof failure[i] === "object" && failure[i] !== null) {
@@ -184,7 +185,6 @@ function extractFailure(failure) {
         break;
       }
     }
-    console.log("FAIL ITEM::", failureItem);
     return extractFailure(failureItem);
   }
   return failureArray;
@@ -203,5 +203,5 @@ function mergeFailuresIntoMessage(failuresArray) {
 }
 
 function secondsToMilliseconds(seconds) {
-  return Math.round(seconds * 1000);
+  return seconds * 1000;
 }
