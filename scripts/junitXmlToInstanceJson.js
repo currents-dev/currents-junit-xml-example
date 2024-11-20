@@ -75,7 +75,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
 
       testsuites.forEach((suite) => {
         const startTime = new Date(suite.timestamp);
-        const durationMillis = parseFloat(suite.time) * 1000;
+        const durationMillis = secondsToMilliseconds(parseFloat(suite.time));
         const endTime = new Date(startTime.getTime() + durationMillis);
 
         const testcases = Array.isArray(suite.testcase)
@@ -129,7 +129,7 @@ fs.readFile(xmlFilePath, "utf-8", (err, data) => {
                     parallelIndex: 1,
                     startTime: suite.timestamp,
                     steps: [],
-                    duration: parseFloat(test?.time) * 1000,
+                    duration: secondsToMilliseconds(parseFloat(test?.time)),
                     status: hasFailure ? "failed" : "passed",
                     stdout: test?.["system-out"] ? [test?.["system-out"]] : [],
                     stderr: hasFailure ? extractFailure(test?.failure) : [],
@@ -200,4 +200,8 @@ function mergeFailuresIntoMessage(failuresArray) {
   return {
     message: failuresArray.join(", "),
   };
+}
+
+function secondsToMilliseconds(seconds) {
+  return Math.round(seconds * 1000);
 }
