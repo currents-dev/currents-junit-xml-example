@@ -1,4 +1,4 @@
-# Currents.dev - Generic API example
+# Currents.dev - JUnit XML report example
 
 This is an example repository that showcases using [Currents.dev](https://currents.dev) for sending test results via Currents Generic API.
 
@@ -12,18 +12,59 @@ This is an example repository that showcases using [Currents.dev](https://curren
 
 
 ## Key points:
-- The report directory for this project is `postman-tests-example`
 - You have all scripts required to test the Generic API example in the `package.json` file
+- All the examples must have the `instances` folder within their respective example folders. Eg: `postman-tests-example/instances`
+- All the examples must have their respective `config.json` file with the following structure:
+```
+{
+  "framework": "junit", // This is mandatory
+  "frameworkVersion": "11.10.0", // Your framework's version
+  "cliArgs": {
+    "options": { 
+        "jUnitFile": "postman-tests-example/tests.xml" // This is mandatory and must point to the JUnit XML file with the tests results
+    },
+    "args": []
+  },
+  "frameworkConfig": {
+    "originFramework": "postman", // This is your framework's name
+    "originFrameworkVersion": "11.10.0" // This is your framework's version
+  }
+}
+```
+- Recognized `originFramework` values in the dashboard are: `postman` for Postman, `vitest` for Vitest and `wdio` for WebDriver.io
+- You can run the `<framework>:full` command for each example to execute all the related commands to the specific example or execute each one of the commands in order to understand what is the purpose of each one.
 
-## Scripts:
-- `parse-postman-test`: Transforms `postman-tests-example/tests.json` file into JUnit `postman-tests-example/tests.xml` file
-- `generate-instance-files`: Reads the JUnit XML file in `postman-tests-example/tests.xml` to generate instance JSON files in `postman-tests-example/instances` path.
-- `report-results`: Executes the `currents upload` command to report the test results in the report directory (`postman-tests-example`) to Currents platform.
 
 ## How to try it?
-1. Get your Record key and Project ID from Currents dashboard.
-2. Execute `node run parse-postman-test`
-3. Execute `node run generate-instance-files`
-4. Replace in the `package.json` file the script called `report-results` with your record key and project ID.
-5. Set a unique CI Build ID in the script from the previous step.
-6. Execute `node run report-results`
+1. Execute `npm run initial-setup` for setting up the needed folders for all the examples.
+2. Get your Record key and Project ID from Currents dashboard.
+3. Put the Record key, Project ID and a unique CI build ID in a `.env` file like this:
+```
+CURRENTS_KEY=your-record-key
+CURRENTS_PROJECT_ID=your-project-id
+CURRENTS_CI_BUILD_ID=unique-id
+```
+
+### Postman
+Postman example is in `postman-tests-example` folder.
+The Postman example has the following commands:
+- `parse-postman-test`: Parses the JSON file exported from the Postman collection and turns it into a JUnit XML file. It uses `newman` to transform the file.
+- `gen-instance-postman`: Generates the instance files into `postman-tests-example/instances` folder from the JUnit XML file.
+- `report-results-postman`: Uploads the results to Currents platform.
+- `postman:full`: Executes all the postman example related commands consecutively in the right order.
+
+### Vitest
+Vitest example is in `vitest-example` folder.
+The Vitest example has the following commands:
+- `test-vitest`: Executes the vitest tests and outputs the result into a JUnit XML file.
+- `gen-instance-vitest`: Generates the instance files into `vistes-example/instances` folder from the JUnit XML file.
+- `report-results-vitest`: Uploads the results to Currents platform.
+- `vitest:full`: Executes all the vitest example related commands consecutively in the right order.
+
+### WebDriver.io
+WebDriver.io example is in `wdio-example` folder.
+The WebDriver.io example has the following commands:
+- `test-wdio`: Executes the WebDriver.io tests and outputs the result into a JUnit XML file.
+- `gen-instance-wdio`: Generates the instance files into `wdio-example/instances` folder from the JUnit XML file.
+- `report-results-wdio`: Uploads the results to Currents platform.
+- `wdio:full`: Executes all the WebDriver.io example related commands consecutively in the right order.

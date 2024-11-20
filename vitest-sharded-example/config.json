@@ -1,0 +1,12 @@
+{
+  "framework": "junit",
+  "frameworkVersion": "2.1.5",
+  "cliArgs": {
+    "options": { "jUnitFile": "vitest-sharded-example/combined-results.xml" },
+    "args": []
+  },
+  "frameworkConfig": {
+    "originFramework": "vitest",
+    "originFrameworkVersion": "2.1.5"
+  }
+}

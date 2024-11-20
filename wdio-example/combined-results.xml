@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <testsuites>
-  <testsuite name="My Login application incorrect" timestamp="2024-11-19T21:57:13" time="5.276" tests="1" failures="1" errors="0" skipped="0">
+  <testsuite name="My Login application incorrect" timestamp="2024-11-19T22:36:41" time="5.627" tests="1" failures="1" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="My Login application incorrect"/>
       <property name="capabilities" value="chrome.131_0_6778_85.mac"/>
       <property name="file" value="file://./wdio-example/tests/signup.e2e.js"/>
     </properties>
-    <testcase classname="chrome.131_0_6778_85.mac.My_Login_application_incorrect" name="should not login with invalid credentials" time="5.275" file="file://./wdio-example/tests/signup.e2e.js">
+    <testcase classname="chrome.131_0_6778_85.mac.My_Login_application_incorrect" name="should not login with invalid credentials" time="5.624" file="file://./wdio-example/tests/signup.e2e.js">
       <failure message="Expect  to have text&#xA;&#xA;Expected: StringContaining &quot;You logged into a secure area!&quot;&#xA;Received: &quot;Your password is invalid!&#xA;×&quot;"/>
       <system-out>
-COMMAND: POST /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.9E8F5E550B4830F4CD52205A72938CC5.e.4/clear - {}
+COMMAND: POST /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.3EDFE6078943AA6F8A6D872F917244A4.e.2/clear - {}
 RESULT: {}
-COMMAND: POST /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.9E8F5E550B4830F4CD52205A72938CC5.e.4/value - {"text":"tomsmith"}
+COMMAND: POST /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.3EDFE6078943AA6F8A6D872F917244A4.e.2/value - {"text":"tomsmith"}
 RESULT: {"text":"tomsmith"}
-COMMAND: POST /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.9E8F5E550B4830F4CD52205A72938CC5.e.6/clear - {}
+COMMAND: POST /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.3EDFE6078943AA6F8A6D872F917244A4.e.4/clear - {}
 RESULT: {}
-COMMAND: POST /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.9E8F5E550B4830F4CD52205A72938CC5.e.6/value - {"text":"123"}
+COMMAND: POST /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.3EDFE6078943AA6F8A6D872F917244A4.e.4/value - {"text":"123"}
 RESULT: {"text":"123"}
-COMMAND: POST /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.9E8F5E550B4830F4CD52205A72938CC5.e.7/click - {}
+COMMAND: POST /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.3EDFE6078943AA6F8A6D872F917244A4.e.5/click - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: GET /session/49359065482a0b75d5bad639e383347e/element/f.AB2EACE3C44538CAF127302ABAFC61BA.d.A9570730BD7EC022002A87D22FF9B038.e.20/text - {}
+COMMAND: GET /session/a406ba212cfc95a48750b8ded7b1b875/element/f.3EDF5C3D62A3E2E12D2CFA1B2DC23B0A.d.C9F202D9BB0B25154335E39BA1C087C3.e.20/text - {}
 RESULT: {}
-COMMAND: DELETE /session/49359065482a0b75d5bad639e383347e - {}
+COMMAND: DELETE /session/a406ba212cfc95a48750b8ded7b1b875 - {}
 RESULT: {}
 </system-out>
       <system-err>
@@ -45,28 +45,28 @@ Received: "Your password is invalid!
 </system-err>
     </testcase>
   </testsuite>
-  <testsuite name="My Login application" timestamp="2024-11-19T21:57:13" time="2.197" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="My Login application" timestamp="2024-11-19T22:36:41" time="2.555" tests="1" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="0"/>
       <property name="suiteName" value="My Login application"/>
       <property name="capabilities" value="chrome.131_0_6778_85.mac"/>
       <property name="file" value="file://./wdio-example/tests/test.e2e.js"/>
     </properties>
-    <testcase classname="chrome.131_0_6778_85.mac.My_Login_application" name="should login with valid credentials" time="2.196" file="file://./wdio-example/tests/test.e2e.js">
+    <testcase classname="chrome.131_0_6778_85.mac.My_Login_application" name="should login with valid credentials" time="2.555" file="file://./wdio-example/tests/test.e2e.js">
       <system-out>
-COMMAND: POST /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.2802ED280BEED2F328FF8CD15211D0BC.e.2/clear - {}
+COMMAND: POST /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.BBC5182F8221CFB84548F8BC3AC8A28E.e.4/clear - {}
 RESULT: {}
-COMMAND: POST /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.2802ED280BEED2F328FF8CD15211D0BC.e.2/value - {"text":"tomsmith"}
+COMMAND: POST /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.BBC5182F8221CFB84548F8BC3AC8A28E.e.4/value - {"text":"tomsmith"}
 RESULT: {"text":"tomsmith"}
-COMMAND: POST /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.2802ED280BEED2F328FF8CD15211D0BC.e.4/clear - {}
+COMMAND: POST /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.BBC5182F8221CFB84548F8BC3AC8A28E.e.6/clear - {}
 RESULT: {}
-COMMAND: POST /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.2802ED280BEED2F328FF8CD15211D0BC.e.4/value - {"text":"SuperSecretPassword!"}
+COMMAND: POST /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.BBC5182F8221CFB84548F8BC3AC8A28E.e.6/value - {"text":"SuperSecretPassword!"}
 RESULT: {"text":"SuperSecretPassword!"}
-COMMAND: POST /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.2802ED280BEED2F328FF8CD15211D0BC.e.5/click - {}
+COMMAND: POST /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.BBC5182F8221CFB84548F8BC3AC8A28E.e.7/click - {}
 RESULT: {}
-COMMAND: GET /session/c4a0967f5661666627261382d0848ce4/element/f.B44F0088E2696F03961FE08D1A3623C0.d.373E1088929B863BDF41B49C4D18D07E.e.14/text - {}
+COMMAND: GET /session/8dde420c08e28e1f96b755f6d3d9099c/element/f.32C7210B23EDEE35CAAE4B9982BC7FF5.d.062822385F23535CECF27181428D5437.e.15/text - {}
 RESULT: {}
-COMMAND: DELETE /session/c4a0967f5661666627261382d0848ce4 - {}
+COMMAND: DELETE /session/8dde420c08e28e1f96b755f6d3d9099c - {}
 RESULT: {}
 </system-out>
     </testcase>

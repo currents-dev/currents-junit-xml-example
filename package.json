@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "initial-setup": "mkdir -p postman-tests-example/instances && mkdir -p vitest-example/instances && mkdir -p wdio-example/instances",
     "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml",
     "gen-instance-postman": "node scripts/junitXmlToInstanceJson.js --input postman-tests-example/tests.xml --output postman-tests-example/instances",
     "report-results-postman": "node scripts/uploadResults.js --report-dir postman-tests-example",
@@ -12,7 +13,7 @@
     "gen-instance-vitest": "node scripts/junitXmlToInstanceJson.js --input vitest-example/junit.xml --output vitest-example/instances",
     "report-results-vitest": "node scripts/uploadResults.js --report-dir vitest-example",
     "vitest:full": "npm run test-vitest || true && npm run gen-instance-vitest && npm run report-results-vitest",
-    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js",
+    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js --reports-dir wdio-example --output-file wdio-example/combined-results.xml",
     "gen-instance-wdio": "node scripts/junitXmlToInstanceJson.js --input wdio-example/combined-results.xml --output wdio-example/instances",
     "report-results-wdio": "node scripts/uploadResults.js --report-dir wdio-example",
     "wdio:full": "npm run test-wdio || true && npm run gen-instance-wdio && npm run report-results-wdio"

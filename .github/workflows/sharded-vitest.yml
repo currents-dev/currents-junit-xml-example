@@ -1,0 +1,41 @@
+name: Vitest Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1, 2]
+        total-shards: [2]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Vitest Tests (Shard ${{ matrix.shard }}/${{ matrix.total-shards }})
+        run: npx vitest --run --shard=${{ matrix.shard }}/${{ matrix.total-shards }} vitest-sharded-example/tests/** --reporter=junit --outputFile=./vitest-sharded-example/results-${{ matrix.shard }}.xml
+
+      - name: Combine Vitest Sharded results
+        run: node ./scripts/combine-results.js --reports-dir vitest-sharded-example --output-file vitest-sharded-example/combined-results.xml
+
+      - name: Report Vitest Sharded results
+        env:
+          CURRENTS_KEY: ${{ secrets.CURRENTS_KEY }}
+          CURRENTS_PROJECT_ID: ${{ secrets.CURRENTS_PROJECT_ID }}
+          CURRENTS_CI_BUILD_ID: ${{ github.run_id }}-${{ github.run_number }}
+        run: node scripts/uploadResults.js --report-dir vitest-sharded-example

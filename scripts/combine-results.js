@@ -2,8 +2,18 @@ const fs = require("fs");
 const xml2js = require("xml2js");
 const path = require("path");
 
-const reportsDir = "wdio-example";
-const outputFile = "wdio-example/combined-results.xml";
+const args = process.argv.slice(2);
+const reportsDirIndex = args.indexOf('--reports-dir');
+const outputFileIndex = args.indexOf('--output-file');
+
+// Set directories with defaults
+const reportsDir = reportsDirIndex !== -1 ? args[reportsDirIndex + 1] : "wdio-example";
+const outputFile = outputFileIndex !== -1 ? args[outputFileIndex + 1] : "wdio-example/combined-results.xml";
+
+if (reportsDirIndex === -1 || outputFileIndex === -1) {
+  console.log('Usage: node script.js --reports-dir <directory> --output-file <file>');
+  console.log(`Using defaults: --reports-dir="${reportsDir}" --output-file="${outputFile}"`);
+}
 
 async function combineResults() {
   const files = fs
