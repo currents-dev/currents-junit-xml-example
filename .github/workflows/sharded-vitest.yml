@@ -25,7 +25,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Run Vitest Tests (Shard ${{ matrix.shard }}/${{ matrix.total-shards }})
         run: npx vitest --run --shard=${{ matrix.shard }}/${{ matrix.total-shards }} vitest-sharded-example/tests/** --reporter=junit --outputFile=./vitest-sharded-example/results-${{ matrix.shard }}.xml
