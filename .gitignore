@@ -3,3 +3,4 @@ node_modules
 */fullTestSuite.json
 upload.marker.json
 .currents
+.env

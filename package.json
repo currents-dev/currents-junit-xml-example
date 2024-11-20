@@ -5,14 +5,33 @@
   "main": "index.js",
   "scripts": {
     "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml",
-    "generate-instance-files": "node scripts/junitXmlToInstanceJson.js",
-    "report-results": "npx currents upload --key=your-record-key --project-id=your-project-id --ci-build-id postman-report-1 --report-dir postman-tests-example"
+    "gen-instance-postman": "node scripts/junitXmlToInstanceJson.js --input postman-tests-example/tests.xml --output postman-tests-example/instances",
+    "report-results-postman": "node scripts/uploadResults.js --report-dir postman-tests-example",
+    "postman:full": "npm run parse-postman-test || true && npm run gen-instance-postman && npm run report-results-postman",
+    "test-vitest": "vitest vitest-example/tests/** --run --reporter=junit --outputFile=./vitest-example/junit.xml",
+    "gen-instance-vitest": "node scripts/junitXmlToInstanceJson.js --input vitest-example/junit.xml --output vitest-example/instances",
+    "report-results-vitest": "node scripts/uploadResults.js --report-dir vitest-example",
+    "vitest:full": "npm run test-vitest || true && npm run gen-instance-vitest && npm run report-results-vitest",
+    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js",
+    "gen-instance-wdio": "node scripts/junitXmlToInstanceJson.js --input wdio-example/combined-results.xml --output wdio-example/instances",
+    "report-results-wdio": "node scripts/uploadResults.js --report-dir wdio-example",
+    "wdio:full": "npm run test-wdio || true && npm run gen-instance-wdio && npm run report-results-wdio"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@currents/cmd": "^1.1.2",
+    "@currents/cmd": "/Users/miguelangarano/Documents/GitHub/currents-reporter/packages/cmd",
+    "@wdio/cli": "^9.2.14",
     "newman": "^6.2.1",
     "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@wdio/junit-reporter": "^9.2.14",
+    "@wdio/local-runner": "^9.2.15",
+    "@wdio/mocha-framework": "^9.2.8",
+    "@wdio/spec-reporter": "^9.2.14",
+    "chromedriver": "^131.0.0",
+    "dotenv-cli": "^7.4.3",
+    "vitest": "^2.1.5"
   }
 }

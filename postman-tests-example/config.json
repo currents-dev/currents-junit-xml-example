@@ -5,5 +5,8 @@
     "options": { "jUnitFile": "postman-tests-example/tests.xml" },
     "args": []
   },
-  "frameworkConfig": {}
+  "frameworkConfig": {
+    "originFramework": "postman",
+    "originFrameworkVersion": "11.10.0"
+  }
 }

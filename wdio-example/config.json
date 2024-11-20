@@ -1,0 +1,12 @@
+{
+  "framework": "junit",
+  "frameworkVersion": "9.2.14",
+  "cliArgs": {
+    "options": { "jUnitFile": "wdio-example/combined-results.xml" },
+    "args": []
+  },
+  "frameworkConfig": {
+    "originFramework": "wdio",
+    "originFrameworkVersion": "9.2.14"
+  }
+}
