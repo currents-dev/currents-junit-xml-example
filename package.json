@@ -1,31 +1,31 @@
 {
-  "name": "generic-api-example",
+  "name": "currents-junit-xml-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "initial-setup": "mkdir -p postman-tests-example/instances && mkdir -p vitest-example/instances && mkdir -p wdio-example/instances && mkdir -p cy-example/instances",
     "parse-postman-test": "newman run postman-tests-example/tests.json -r junit --reporter-junit-export postman-tests-example/tests.xml",
-    "gen-instance-postman": "node scripts/junitXmlToInstanceJson.js --input postman-tests-example/tests.xml --output postman-tests-example/instances",
+    "gen-instance-postman": "npx currents convert --input-format=junit --input-file=./postman-tests-example/tests.xml --output-dir=./postman-tests-example --framework=postman",
     "report-results-postman": "node scripts/uploadResults.js --report-dir postman-tests-example",
     "postman:full": "npm run parse-postman-test || true && npm run gen-instance-postman && npm run report-results-postman",
-    "test-vitest": "vitest vitest-example/tests/** --run --reporter=junit --outputFile=./vitest-example/junit.xml",
-    "gen-instance-vitest": "node scripts/junitXmlToInstanceJson.js --input vitest-example/junit.xml --output vitest-example/instances",
+    "test-vitest": "vitest --config vitest-example/vitest.config.js vitest-example/tests/** --run --outputFile=./vitest-example/currents.results.xml",
+    "gen-instance-vitest": "node scripts/junitXmlToInstanceJson.js --input vitest-example/currents.results.xml --output vitest-example/instances",
     "report-results-vitest": "node scripts/uploadResults.js --report-dir vitest-example",
     "vitest:full": "npm run test-vitest || true && npm run gen-instance-vitest && npm run report-results-vitest",
-    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js --reports-dir wdio-example --output-file wdio-example/combined-results.xml",
-    "gen-instance-wdio": "node scripts/junitXmlToInstanceJson.js --input wdio-example/combined-results.xml --output wdio-example/instances",
+    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js --reports-dir wdio-example --output-file wdio-example/currents.results.xml",
+    "gen-instance-wdio": "node scripts/junitXmlToInstanceJson.js --input wdio-example/currents.results.xml --output wdio-example/instances",
     "report-results-wdio": "node scripts/uploadResults.js --report-dir wdio-example",
     "wdio:full": "npm run test-wdio || true && npm run gen-instance-wdio && npm run report-results-wdio",
-    "test-cy": "npx cypress run --config-file cy-example/cypress.config.js || true && node ./scripts/combine-results.js --reports-dir cy-example --output-file cy-example/combined-results.xml",
-    "gen-instance-cy": "node scripts/junitXmlToInstanceJson.js --input cy-example/combined-results.xml --output cy-example/instances",
+    "test-cy": "npx cypress run --config-file cy-example/cypress.config.js || true && node ./scripts/combine-results.js --reports-dir cy-example --output-file cy-example/currents.results.xml",
+    "gen-instance-cy": "node scripts/junitXmlToInstanceJson.js --input cy-example/currents.results.xml --output cy-example/instances",
     "report-results-cy": "node scripts/uploadResults.js --report-dir cy-example",
     "cy:full": "npm run test-cy || true && npm run gen-instance-cy && npm run report-results-cy"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@currents/cmd": "/Users/miguelangarano/Documents/GitHub/currents-reporter/packages/cmd",
+    "@currents/cmd": "^1.2.1",
     "@wdio/cli": "^9.2.14",
     "newman": "^6.2.1",
     "xml2js": "^0.6.2"
@@ -40,5 +40,11 @@
     "cypress-junit-reporter": "^1.3.1",
     "dotenv-cli": "^7.4.3",
     "vitest": "^2.1.5"
+  },
+  "overrides": {
+    "chalk": "4.1.2",
+    "@wdio/cli": {
+      "chalk": "4.1.2"
+    }
   }
 }

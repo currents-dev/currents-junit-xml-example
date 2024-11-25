@@ -53,6 +53,8 @@ The Postman example has the following commands:
 - `report-results-postman`: Uploads the results to Currents platform.
 - `postman:full`: Executes all the postman example related commands consecutively in the right order.
 
+Note: `gen-instance-postman` command uses `currents convert` command to make the file parsing easier for postman specifically and will increase the support for other frameworks overtime.
+
 ### Vitest
 Vitest example is in `vitest-example` folder.
 The Vitest example has the following commands:

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="13" failures="2" errors="0" time="0.28">
+    <testsuite name="vitest-example/tests/numberUtils.spec.js" timestamp="2024-11-25T16:54:47.102Z" hostname="Miguels-Laptop.local" tests="7" failures="0" errors="0" skipped="0" time="0.007122709">
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; calculates average of positive numbers" time="0.000810916">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; handles array with single number" time="0.000148916">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; handles empty array" time="0.000068583">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; handles negative numbers" time="0.000069084">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; handles decimal numbers" time="0.000162458">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; returns 0 for invalid input" time="0.00006825">
+        </testcase>
+        <testcase classname="vitest-example/tests/numberUtils.spec.js" name="calculateAverage &gt; timeout" time="0.005171916">
+            <system-out>
+COUNT:: 1 1
+TIMEO::
+COUNT:: 2 2
+TIMEO::
+COUNT:: 3 3
+DEL::
+
+            </system-out>
+        </testcase>
+    </testsuite>
+    <testsuite name="vitest-example/tests/stringUtils.spec.js" timestamp="2024-11-25T16:54:47.104Z" hostname="Miguels-Laptop.local" tests="6" failures="2" errors="0" skipped="0" time="0.007103792">
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; capitalizes first letter of each word" time="0.000799792">
+        </testcase>
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; handles already capitalized words" time="0.000095958">
+        </testcase>
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; handles empty string" time="0.000067417">
+        </testcase>
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; handles single word" time="0.000128">
+        </testcase>
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; handles mixed case input" time="0.004466708">
+            <failure message="expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality
+
+Expected: &quot;Hello World!&quot;
+Received: &quot;Hello World&quot;
+
+ ❯ vitest-example/tests/stringUtils.spec.js:22:44
+            </failure>
+            <failure message="expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality
+
+Expected: &quot;Hello World!&quot;
+Received: &quot;Hello World&quot;
+
+ ❯ vitest-example/tests/stringUtils.spec.js:22:44
+            </failure>
+            <failure message="expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality
+
+Expected: &quot;Hello World!&quot;
+Received: &quot;Hello World&quot;
+
+ ❯ vitest-example/tests/stringUtils.spec.js:22:44
+            </failure>
+            <failure message="expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality" type="AssertionError">
+AssertionError: expected &apos;Hello World&apos; to be &apos;Hello World!&apos; // Object.is equality
+
+Expected: &quot;Hello World!&quot;
+Received: &quot;Hello World&quot;
+
+ ❯ vitest-example/tests/stringUtils.spec.js:22:44
+            </failure>
+        </testcase>
+        <testcase classname="vitest-example/tests/stringUtils.spec.js" name="capitalizeWords &gt; errors on number received" time="0.000910709">
+            <failure message="str.split is not a function" type="TypeError">
+TypeError: str.split is not a function
+ ❯ Module.capitalizeWords vitest-example/stringUtils.js:4:6
+ ❯ vitest-example/tests/stringUtils.spec.js:26:12
+            </failure>
+            <failure message="str.split is not a function" type="TypeError">
+TypeError: str.split is not a function
+ ❯ Module.capitalizeWords vitest-example/stringUtils.js:4:6
+ ❯ vitest-example/tests/stringUtils.spec.js:26:12
+            </failure>
+            <failure message="str.split is not a function" type="TypeError">
+TypeError: str.split is not a function
+ ❯ Module.capitalizeWords vitest-example/stringUtils.js:4:6
+ ❯ vitest-example/tests/stringUtils.spec.js:26:12
+            </failure>
+            <failure message="str.split is not a function" type="TypeError">
+TypeError: str.split is not a function
+ ❯ Module.capitalizeWords vitest-example/stringUtils.js:4:6
+ ❯ vitest-example/tests/stringUtils.spec.js:26:12
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

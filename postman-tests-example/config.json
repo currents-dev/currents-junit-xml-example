@@ -1,12 +1,1 @@
-{
-  "framework": "junit",
-  "frameworkVersion": "11.10.0",
-  "cliArgs": {
-    "options": { "jUnitFile": "postman-tests-example/tests.xml" },
-    "args": []
-  },
-  "frameworkConfig": {
-    "originFramework": "postman",
-    "originFrameworkVersion": "11.10.0"
-  }
-}
+{"framework":"junit","frameworkVersion":null,"cliArgs":{},"frameworkConfig":{"originFramework":"postman"}}
