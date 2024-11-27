@@ -1,0 +1,9 @@
+{
+  "name": "@currents-junit-xml-example/nodejs-test-runner",
+  "version": "1.0.0",
+  "description": "Integrate NodeJS test runner with Currents",
+  "main": "index.js",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {}
+}

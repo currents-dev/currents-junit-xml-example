@@ -14,3 +14,4 @@ npm install
 - [Vitest](./packages/vitest)
 - [Vitest - parallel runs on GitHub Actions](./packages/vitest)
 - [WebdriverIO](./packages/wdio)
+- [NodeJS Test Runner](./packages/nodejs-test-runner)
