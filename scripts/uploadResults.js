@@ -14,7 +14,7 @@ const command = `${
     : ""
 } npx currents upload --key=${process.env.CURRENTS_KEY} --project-id=${
   process.env.CURRENTS_PROJECT_ID
-} --report-dir ${reportDir}`;
+} --report-dir ${reportDir} --debug`;
 
 try {
   execSync(command, { stdio: "inherit" });
