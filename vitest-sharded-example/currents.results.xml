@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <testsuites name="vitest tests">
-  <testsuite name="vitest-sharded-example/tests/stringUtils.spec.js" timestamp="2024-11-27T15:44:32.148Z" hostname="Miguels-Laptop.local" tests="6" failures="2" errors="0" skipped="0" time="0.0063649998">
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > capitalizes first letter of each word" time="0.0009567499"/>
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles already capitalized words" time="0.0001602077"/>
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles empty string" time="0.0000685005"/>
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles single word" time="0.0000665417"/>
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles mixed case input" time="0.0038440428">
+  <testsuite name="vitest-sharded-example/tests/stringUtils.spec.js" timestamp="2024-11-27T15:58:51.086Z" hostname="Miguels-Laptop.local" tests="6" failures="2" errors="0" skipped="0" time="0.0063566675">
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > capitalizes first letter of each word" time="0.0008613749"/>
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles already capitalized words" time="0.000170125"/>
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles empty string" time="0.0000637503"/>
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles single word" time="0.0000631247"/>
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > handles mixed case input" time="0.0038017502">
       <failure message="expected 'Hello World' to be 'Hello World!' // Object.is equality" type="AssertionError">
 AssertionError: expected 'Hello World' to be 'Hello World!' // Object.is equality
 
@@ -15,7 +15,7 @@ Received: "Hello World"
  ❯ vitest-sharded-example/tests/stringUtils.spec.js:22:44
             </failure>
     </testcase>
-    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > errors on number received" time="0.0005393753">
+    <testcase classname="vitest-sharded-example/tests/stringUtils.spec.js" name="capitalizeWords > errors on number received" time="0.0006877089">
       <failure message="str.split is not a function" type="TypeError">
 TypeError: str.split is not a function
  ❯ Module.capitalizeWords vitest-sharded-example/stringUtils.js:4:6
@@ -23,12 +23,12 @@ TypeError: str.split is not a function
             </failure>
     </testcase>
   </testsuite>
-  <testsuite name="vitest-sharded-example/tests/numberUtils.spec.js" timestamp="2024-11-27T15:44:33.031Z" hostname="Miguels-Laptop.local" tests="6" failures="0" errors="0" skipped="0" time="0.0034581671">
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > calculates average of positive numbers" time="0.0010190001"/>
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles array with single number" time="0.0001721258"/>
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles empty array" time="0.0000664587"/>
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles negative numbers" time="0.0000648756"/>
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles decimal numbers" time="0.0001836252"/>
-    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > returns 0 for invalid input" time="0.0000692921"/>
+  <testsuite name="vitest-sharded-example/tests/numberUtils.spec.js" timestamp="2024-11-27T15:58:52.064Z" hostname="Miguels-Laptop.local" tests="6" failures="0" errors="0" skipped="0" time="0.0020126247">
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > calculates average of positive numbers" time="0.0008590422"/>
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles array with single number" time="0.0001507921"/>
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles empty array" time="0.0000633335"/>
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles negative numbers" time="0.0000620422"/>
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > handles decimal numbers" time="0.0001586256"/>
+    <testcase classname="vitest-sharded-example/tests/numberUtils.spec.js" name="calculateAverage > returns 0 for invalid input" time="0.0000668344"/>
   </testsuite>
 </testsuites>
