@@ -1,6 +1,0 @@
-{
-  "framework": "junit",
-  "frameworkVersion": null,
-  "cliArgs": {},
-  "frameworkConfig": { "originFramework": "vitest" }
-}

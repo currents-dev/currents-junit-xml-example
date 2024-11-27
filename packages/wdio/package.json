@@ -1,0 +1,22 @@
+{
+  "name": "@currents-junit-xml-example/wdio",
+  "version": "1.0.0",
+  "description": "Integrate WebdriverIO with Currents",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@wdio/junit-reporter": "^9.2.14",
+    "@wdio/local-runner": "^9.2.15",
+    "@wdio/mocha-framework": "^9.2.8",
+    "@wdio/spec-reporter": "^9.2.14",
+    "chromedriver": "^131.0.0"
+  },
+  "overrides": {
+    "chalk": "4.1.2",
+    "@wdio/cli": {
+      "chalk": "4.1.2"
+    }
+  }
+}

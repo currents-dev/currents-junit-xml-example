@@ -5,3 +5,5 @@ upload.marker.json
 .currents
 .env
 cypress/
+.turbo
+**/.currents
