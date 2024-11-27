@@ -32,7 +32,7 @@ jobs:
         run: npx vitest --run --shard=${{ matrix.shard }}/${{ matrix.total-shards }} vitest-sharded-example/tests/** --reporter=junit --outputFile=./vitest-sharded-example/results-${{ matrix.shard }}.xml
 
       - name: Combine Vitest Sharded results
-        run: node ./scripts/combine-results.js --reports-dir vitest-sharded-example --output-file vitest-sharded-example/currents.results.xml
+        run: node ./scripts/combineResults.js --reports-dir vitest-sharded-example --output-file vitest-sharded-example/currents.results.xml
 
       - name: Generate Instance files
         run:  node scripts/junitXmlToInstanceJson.js --input vitest-sharded-example/currents.results.xml --output vitest-sharded-example/instances

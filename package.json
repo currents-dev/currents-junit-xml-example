@@ -13,11 +13,11 @@
     "gen-instance-vitest": "node scripts/junitXmlToInstanceJson.js --input vitest-example/currents.results.xml --output vitest-example/instances",
     "report-results-vitest": "node scripts/uploadResults.js --report-dir vitest-example",
     "vitest:full": "npm run test-vitest || true && npm run gen-instance-vitest && npm run report-results-vitest",
-    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combine-results.js --reports-dir wdio-example --output-file wdio-example/currents.results.xml",
+    "test-wdio": "npx wdio run wdio-example/wdio.conf.js || true && node ./scripts/combineResults.js --reports-dir wdio-example --output-file wdio-example/currents.results.xml",
     "gen-instance-wdio": "node scripts/junitXmlToInstanceJson.js --input wdio-example/currents.results.xml --output wdio-example/instances",
     "report-results-wdio": "node scripts/uploadResults.js --report-dir wdio-example",
     "wdio:full": "npm run test-wdio || true && npm run gen-instance-wdio && npm run report-results-wdio",
-    "test-cy": "npx cypress run --config-file cy-example/cypress.config.js || true && node ./scripts/combine-results.js --reports-dir cy-example --output-file cy-example/currents.results.xml",
+    "test-cy": "npx cypress run --config-file cy-example/cypress.config.js || true && node ./scripts/combineResults.js --reports-dir cy-example --output-file cy-example/currents.results.xml",
     "gen-instance-cy": "node scripts/junitXmlToInstanceJson.js --input cy-example/currents.results.xml --output cy-example/instances",
     "report-results-cy": "node scripts/uploadResults.js --report-dir cy-example",
     "cy:full": "npm run test-cy || true && npm run gen-instance-cy && npm run report-results-cy"
