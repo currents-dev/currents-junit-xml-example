@@ -13,6 +13,9 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"let prevCiBuildId = pm.environment.get(\"prevCiBuildId\");",
+							"console.log(`Using prevCiBuildId: ${prevCiBuildId}`);",
+							"",
 							"pm.test(\"Response status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
@@ -45,17 +48,14 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer your-api-key",
+						"value": "Bearer {{API_TOKEN}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.currents.dev/v1/runs/previous?projectId=your-project-id&ciBuildId=your-ci-build-id&pwLastRun=true",
-					"protocol": "https",
+					"raw": "{{API_URL}}/v1/runs/previous?projectId=LrO7nE&ciBuildId={{prevCiBuildId}}&pwLastRun=true",
 					"host": [
-						"api",
-						"currents",
-						"dev"
+						"{{API_URL}}"
 					],
 					"path": [
 						"v1",
@@ -65,11 +65,11 @@
 					"query": [
 						{
 							"key": "projectId",
-							"value": "your-project-id"
+							"value": "LrO7nE"
 						},
 						{
 							"key": "ciBuildId",
-							"value": "your-ci-build-id"
+							"value": "{{prevCiBuildId}}"
 						},
 						{
 							"key": "pwLastRun",
@@ -107,7 +107,12 @@
 							"    pm.expect(responseData).to.be.an('object');",
 							"    pm.expect(responseData.status).to.be.a('string');",
 							"    pm.expect(responseData.data).to.be.an('object');",
-							"});"
+							"});",
+							"",
+							"",
+							"let responseData = pm.response.json();",
+							"console.log(`Saving prevCiBuildId: ${responseData.data.meta.ciBuildId}`);",
+							"pm.environment.set(\"prevCiBuildId\", responseData.data.meta.ciBuildId);"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -119,26 +124,57 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer your-api-key",
+						"value": "Bearer {{API_TOKEN}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://api.currents.dev/v1/runs/your-run-id",
-					"protocol": "https",
+					"raw": "{{API_URL}}/v1/runs/f6fe40a7856d160d",
 					"host": [
-						"api",
-						"currents",
-						"dev"
+						"{{API_URL}}"
 					],
 					"path": [
 						"v1",
 						"runs",
-						"your-run-id"
+						"f6fe40a7856d160d"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_TOKEN",
+			"value": "dXGDik1SmFlDfOCyDpmhS8dNzmMrG27P0noe7qbGNvnMQQmPwWcN51dFGu1SouRP",
+			"type": "string"
+		},
+		{
+			"key": "API_URL",
+			"value": "https://api.currents.dev",
+			"type": "string"
 		}
 	]
 }
