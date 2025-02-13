@@ -17,8 +17,8 @@ npm run test
 npx currents convert \
   --input-format=junit \
   --input-file=results.xml \
-  --framework=postman \
-  --framework-version=v11.2.0
+  --framework=vitest \
+  --framework-version=v3.4.0
 ```
 
 - Upload the results to Currents
@@ -37,8 +37,8 @@ npx currents upload --key=your-record-key --project-id=currents-project-id
 ❯ npx currents convert \
   --input-format=junit \
   --input-file=results.xml \
-  --framework=postman \
-  --framework-version=v11.2.0
+  --framework=vitest \
+  --framework-version=v3.4.0
 [currents] Convertion files: results.xml
 [currents] Conversion completed, report saved to: /Users/miguelangarano/Documents/GitHub/generic-api-example/packages/vitest/.currents/2025-02-12T23-48-19-456Z-98201537-912f-4969-8bdc-a147003e8670
 
@@ -46,7 +46,7 @@ npx currents upload --key=your-record-key --project-id=currents-project-id
 ❯ npx currents upload --key=xxx --project-id=yyy
 
 Currents config: {
-  projectId: 'kLfVfq',
+  projectId: '***',
   recordKey: '*****',
   removeTitleTags: false,
   disableTitleTags: false,
