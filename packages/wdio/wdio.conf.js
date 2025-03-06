@@ -132,7 +132,7 @@ exports.config = {
     [
       "junit",
       {
-        outputDir: "./wdio-example",
+        outputDir: "./results",
         outputFileFormat: function (options) {
           return `results-${Date.now()}-${options.cid}.xml`;
         },

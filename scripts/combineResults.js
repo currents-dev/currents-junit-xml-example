@@ -5,13 +5,15 @@ const path = require("path");
 const args = process.argv.slice(2);
 const reportsDirIndex = args.indexOf("--reports-dir");
 const outputFileIndex = args.indexOf("--output-file");
+const groupNameIndex = args.indexOf("--group-name");
 
 const reportsDir =
-  reportsDirIndex !== -1 ? args[reportsDirIndex + 1] : "wdio-example";
+  reportsDirIndex !== -1 ? args[reportsDirIndex + 1] : "results";
 const outputFile =
   outputFileIndex !== -1
     ? args[outputFileIndex + 1]
-    : "wdio-example/combined-results.xml";
+    : "combined-results.xml";
+const groupName = groupNameIndex !== -1 ? args[groupNameIndex + 1] : "junit";
 
 if (reportsDirIndex === -1 || outputFileIndex === -1) {
   console.log(
@@ -45,6 +47,14 @@ async function processTestSuites(testsuites) {
 }
 
 async function combineResults() {
+  const folderPath = reportsDir;
+
+  if (!fs.existsSync(folderPath)) {
+    fs.mkdirSync(folderPath, { recursive: true });
+    console.log("Folder created:", folderPath);
+  } else {
+    console.log("Folder already exists:", folderPath);
+  }
   const files = fs
     .readdirSync(reportsDir)
     .filter((f) => f.startsWith("results-") && f.endsWith(".xml"));
@@ -52,7 +62,7 @@ async function combineResults() {
   let combinedTestsuites = {
     testsuites: {
       $: {
-        name: "vitest tests",
+        name: groupName,
       },
       testsuite: [],
     },
@@ -76,7 +86,7 @@ async function combineResults() {
   fs.writeFileSync(outputFile, xml);
 
   // Optionally clean up individual result files
-  files.forEach((file) => fs.unlinkSync(path.join(reportsDir, file)));
+  // files.forEach((file) => fs.unlinkSync(path.join(reportsDir, file)));
 
   console.log("Results combined into:", outputFile);
 }

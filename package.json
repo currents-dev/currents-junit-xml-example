@@ -13,7 +13,7 @@
   "scripts": {},
   "license": "MIT",
   "dependencies": {
-    "@currents/cmd": "^1.6.0"
+    "@currents/cmd": "^1.6.8"
   },
   "devDependencies": {
     "dotenv-cli": "^7.4.3"
