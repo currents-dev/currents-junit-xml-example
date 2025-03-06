@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@currents/cmd": "^1.6.8",
+    "@currents/cmd": "^1.6.9",
     "vitest": "^2.1.5"
   }
 }

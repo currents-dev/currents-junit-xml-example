@@ -13,6 +13,6 @@
     "@wdio/mocha-framework": "^9.2.8",
     "@wdio/spec-reporter": "^9.2.14",
     "chromedriver": "^131.0.0",
-    "@currents/cmd": "^1.6.8"
+    "@currents/cmd": "^1.6.9"
   }
 }
