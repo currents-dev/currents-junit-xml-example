@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="My Login application" timestamp="2025-03-11T16:03:29" time="2.22" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="My Login application"/>
+      <property name="capabilities" value="chrome.134_0_6998_45.mac"/>
+      <property name="file" value="file://./tests/test.e2e.js"/>
+    </properties>
+    <testcase classname="chrome.134_0_6998_45.mac.My_Login_application" name="should login with valid credentials" time="2.22" file="file://./tests/test.e2e.js">
+      <system-out><![CDATA[
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.511F1A2BDEF38FC9328FE9A95D59CCA4.e.5/clear - {}
+RESULT: {}
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.511F1A2BDEF38FC9328FE9A95D59CCA4.e.5/value - {"text":"tomsmith"}
+RESULT: {"text":"tomsmith"}
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.511F1A2BDEF38FC9328FE9A95D59CCA4.e.6/clear - {}
+RESULT: {}
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.511F1A2BDEF38FC9328FE9A95D59CCA4.e.6/value - {"text":"SuperSecretPassword!"}
+RESULT: {"text":"SuperSecretPassword!"}
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.511F1A2BDEF38FC9328FE9A95D59CCA4.e.7/click - {}
+RESULT: {}
+COMMAND: POST /session/d72110d1b51796446a597ee4bf17fd4c/elements - {"using":"css selector","value":"#flash"}
+RESULT: {"using":"css selector","value":"#flash"}
+COMMAND: GET /session/d72110d1b51796446a597ee4bf17fd4c/element/f.B1BC4910310699B3BE21AF6F608900FB.d.FF4D6D614FA59BC2166D3F6157C3ACA9.e.15/text - {}
+RESULT: {}
+COMMAND: DELETE /session/d72110d1b51796446a597ee4bf17fd4c - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

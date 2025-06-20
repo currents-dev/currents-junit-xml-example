@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="0" skipped="0">
+  <testsuite name="My Login application incorrect" timestamp="2025-03-11T16:13:34" time="10.003" tests="1" failures="1" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="My Login application incorrect"/>
+      <property name="capabilities" value="chrome.134_0_6998_45.mac"/>
+      <property name="file" value="file://./tests/signup.e2e.js"/>
+    </properties>
+    <testcase classname="chrome.134_0_6998_45.mac.My_Login_application_incorrect" name="should not login with invalid credentials" time="10.002" file="file://./tests/signup.e2e.js">
+      <failure message="Timeout"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.17D825E6E26F8B74EA18738C4ABAC8A3.e.5/clear - {}
+RESULT: {}
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.17D825E6E26F8B74EA18738C4ABAC8A3.e.5/value - {"text":"tomsmith"}
+RESULT: {"text":"tomsmith"}
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.17D825E6E26F8B74EA18738C4ABAC8A3.e.6/clear - {}
+RESULT: {}
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.17D825E6E26F8B74EA18738C4ABAC8A3.e.6/value - {"text":"123"}
+RESULT: {"text":"123"}
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.17D825E6E26F8B74EA18738C4ABAC8A3.e.7/click - {}
+RESULT: {}
+COMMAND: POST /session/820bcb4ead38a505a490301ed0a81997/elements - {"using":"css selector","value":"#flash"}
+RESULT: {"using":"css selector","value":"#flash"}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+COMMAND: DELETE /session/820bcb4ead38a505a490301ed0a81997 - {}
+COMMAND: GET /session/820bcb4ead38a505a490301ed0a81997/element/f.15A37D2D1AAACCB1E60BD4DF2209E450.d.F3DE86643BF0F6D8477F4518999B09D9.e.19/text - {}
+RESULT: {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Timeout
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

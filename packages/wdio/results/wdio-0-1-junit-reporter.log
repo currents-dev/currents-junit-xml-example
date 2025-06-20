@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="My Login application" timestamp="2025-03-11T15:52:05" time="2.38" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="My Login application"/>
+      <property name="capabilities" value="chrome.134_0_6998_45.mac"/>
+      <property name="file" value="file://./tests/test.e2e.js"/>
+    </properties>
+    <testcase classname="chrome.134_0_6998_45.mac.My_Login_application" name="should login with valid credentials" time="2.38" file="file://./tests/test.e2e.js">
+      <system-out><![CDATA[
+COMMAND: POST /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.1E2A8E934009DD80F58391544E0716F3.e.5/clear - {}
+RESULT: {}
+COMMAND: POST /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.1E2A8E934009DD80F58391544E0716F3.e.5/value - {"text":"tomsmith"}
+RESULT: {"text":"tomsmith"}
+COMMAND: POST /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.1E2A8E934009DD80F58391544E0716F3.e.6/clear - {}
+RESULT: {}
+COMMAND: POST /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.1E2A8E934009DD80F58391544E0716F3.e.6/value - {"text":"SuperSecretPassword!"}
+RESULT: {"text":"SuperSecretPassword!"}
+COMMAND: POST /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.1E2A8E934009DD80F58391544E0716F3.e.7/click - {}
+RESULT: {}
+COMMAND: GET /session/26bfa59c34ca1bd6d2f5aa45cfceddd8/element/f.12DD38D5BB36CB40908687A4C8EF8A42.d.0182470DE9B398C08FE90B352943B428.e.14/text - {}
+RESULT: {}
+COMMAND: DELETE /session/26bfa59c34ca1bd6d2f5aa45cfceddd8 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

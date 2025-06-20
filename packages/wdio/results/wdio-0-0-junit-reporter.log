@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="0" skipped="0">
+  <testsuite name="My Login application incorrect" timestamp="2025-03-11T15:51:53" time="10.012" tests="1" failures="1" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="My Login application incorrect"/>
+      <property name="capabilities" value="chrome.134_0_6998_45.mac"/>
+      <property name="file" value="file://./tests/signup.e2e.js"/>
+    </properties>
+    <testcase classname="chrome.134_0_6998_45.mac.My_Login_application_incorrect" name="should not login with invalid credentials" time="10.012" file="file://./tests/signup.e2e.js">
+      <failure message="Timeout"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.03575F4625C51C1AFFBEBB58A492DD9E.e.5/clear - {}
+RESULT: {}
+COMMAND: POST /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.03575F4625C51C1AFFBEBB58A492DD9E.e.5/value - {"text":"tomsmith"}
+RESULT: {"text":"tomsmith"}
+COMMAND: POST /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.03575F4625C51C1AFFBEBB58A492DD9E.e.6/clear - {}
+RESULT: {}
+COMMAND: POST /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.03575F4625C51C1AFFBEBB58A492DD9E.e.6/value - {"text":"123"}
+RESULT: {"text":"123"}
+COMMAND: POST /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.03575F4625C51C1AFFBEBB58A492DD9E.e.7/click - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: GET /session/da55c336d1803c15a384c4ebace3b277/element/f.3091BD3BB701348AE59BCFFAE944BF93.d.C3670FA5B113797023312A6755E73566.e.19/text - {}
+RESULT: {}
+COMMAND: DELETE /session/da55c336d1803c15a384c4ebace3b277 - {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+Error: Timeout
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>
