@@ -1,0 +1,53 @@
+name: Vitest Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Clear npm cache and install dependencies
+        run: |
+          npm cache clean --force
+          rm -rf node_modules package-lock.json
+          npm install
+
+      - name: Run Vitest Tests
+        working-directory: ./packages/vitest
+        continue-on-error: true
+        run: npx vitest --run --reporter=junit --outputFile=./results.xml
+
+      - name: Convert JUnit XML to Currents format
+        working-directory: ./packages/vitest
+        run: |
+          npx currents convert \
+            --input-format=junit \
+            --input-file=results.xml \
+            --output-dir=.currents \
+            --framework=vitest \
+            --framework-version=v2.1.5
+
+      - name: Upload results to Currents
+        working-directory: ./packages/vitest
+        env:
+          CURRENTS_KEY: ${{ secrets.CURRENTS_KEY }}
+          CURRENTS_PROJECT_ID: ${{ secrets.CURRENTS_PROJECT_ID }}
+          CURRENTS_CI_BUILD_ID: ${{ github.run_id }}-${{ github.run_number }}
+        run: |
+          npx currents upload \
+            --project-id=${{ secrets.CURRENTS_PROJECT_ID }} \
+            --key=${{ secrets.CURRENTS_KEY }}
