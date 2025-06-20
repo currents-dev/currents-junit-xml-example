@@ -37,7 +37,6 @@ jobs:
           npx currents convert \
             --input-format=junit \
             --input-file=results.xml \
-            --output-dir=.currents \
             --framework=vitest \
             --framework-version=v2.1.5
 
