@@ -49,4 +49,5 @@ jobs:
         run: |
           npx currents upload \
             --project-id=${{ secrets.CURRENTS_PROJECT_ID }} \
-            --key=${{ secrets.CURRENTS_KEY }}
+            --key=${{ secrets.CURRENTS_KEY }} \
+            --debug
