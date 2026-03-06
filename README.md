@@ -1,3 +1,14 @@
+# ⚠️ ARCHIVED REPOSITORY ⚠️
+
+> **This repository is now archived and read-only.**
+>
+> For the latest examples and updates, please visit our new repository:
+>
+> # [👉 https://github.com/currents-dev/currents-examples](https://github.com/currents-dev/currents-examples/tree/main/generic-reporter/junit/junit-xml)
+
+---
+
+
 # Currents.dev - JUnit XML report example
 
 This is an example repository that showcases integrating variout testing frameworks with [Currents.dev](https://currents.dev).
